@@ -17,18 +17,19 @@ npm i -S @grdon/logger
 const logger = require('@grdon/logger')({
   defaultLogDirectory : __dirname + "/logs",
 })
-...
+// ...
 
 logger(someParams, 'logfile.txt')
+
 logger(anotherParams, 'anotherLogFile.log')
 ```
 
-| Opion | Default Value | Description|
+| Option | Default Value | Description|
 |-|-|-|
-|defaultLogDirectory| */logs* | Log files directory|
+|defaultLogDirectory| *./logs/* | Log files directory|
 |logFileMaxSize|10 MB| Maximum size for single file in MB |
-|renameIfOverflow| true | If file size reaches logFileMaxSize, file will be **renamed** with 'originalFileName-YYYY:mm:dd H:i:s' format. If this option set false file will be **truncated**  |
-|trace| true| Include full stack trace for currenct call|
+|renameIfOverflow| true | When file size reaches logFileMaxSize, it will be **renamed** with 'originalFileName-YYYY:mm:dd H:i:s' format. If this option set false file will be **truncated**  |
+|trace| true| Include **full stack trace** for currenct call|
 
 ## Multiple instances example for expressjs server
 ```js
