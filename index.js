@@ -110,7 +110,7 @@ class Logger {
             return resolve(true)
           }
           const size = resp.size / (1024*1024)
-          console.log('size of file is', size)
+          // console.log('size of file is', size)
           if(size >= this.options.logFileMaxSize) {
 
             if(this.options.renameIfOverflow) {
@@ -149,7 +149,6 @@ class Logger {
     const destination = path.join(this.options.defaultLogDirectory , fileName);
     try  {
       await this.checkForRename(destination)
-      console.log('await after')
     } catch (err) {
       console.log(err)
       throw new Error(`Cannot rename file: ${err.message}`)
